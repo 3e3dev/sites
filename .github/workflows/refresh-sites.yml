@@ -1,0 +1,48 @@
+name: Refresh portfolio daily
+on:
+  schedule:
+    - cron: '23 9 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['src/**', 'scripts/**', 'data/curated.json', '.github/workflows/refresh-sites.yml']
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: portfolio-pages
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test discovery and rendering
+        run: node --test scripts/portfolio.test.mjs
+      - name: Discover published Pages projects
+        run: node scripts/discover.mjs
+      - name: Build static portfolio
+        run: node scripts/build.mjs
+      - name: Save latest scan and generated site
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/projects.json docs/ src/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh published sites and daily scan record'
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: Publish portfolio
+        id: deployment
+        uses: actions/deploy-pages@v4
