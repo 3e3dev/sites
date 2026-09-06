@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-09-06T01:05:20.765Z",
+  "projects": [
+    {
+      "name": "fern-atlas",
+      "description": "Fern & Frond — an interactive watercolor atlas of the ferns of the Americas",
+      "url": "https://3e3dev.github.io/fern-atlas/"
+    },
+    {
+      "name": "helvella-atlas",
+      "description": "A botanical atlas of Helvella: global taxonomy, credited MushroomObserver field photos, and interactive Blender sculptures.",
+      "url": "https://3e3dev.github.io/helvella-atlas/"
+    },
+    {
+      "name": "tom-sutton",
+      "description": "Beautifully Strange — an independent educational archive of Tom Sutton comic cover art",
+      "url": "https://3e3dev.github.io/tom-sutton/"
+    }
+  ]
+}
