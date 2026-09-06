@@ -1,0 +1,9 @@
+{
+  "name": "3e3dev-sites",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs"
+  }
+}
