@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-06T01:20:56.753Z",
+  "checkedAt": "2026-09-06T12:55:06.845Z",
   "projects": [
     {
       "name": "fern-atlas",
@@ -10,6 +10,16 @@
       "name": "helvella-atlas",
       "description": "A botanical atlas of Helvella: global taxonomy, credited MushroomObserver field photos, and interactive Blender sculptures.",
       "url": "https://3e3dev.github.io/helvella-atlas/"
+    },
+    {
+      "name": "jelly",
+      "description": "Jelly — a peaceful, luminous underwater browser game",
+      "url": "https://3e3dev.github.io/jelly/"
+    },
+    {
+      "name": "maya",
+      "description": "An illustrated OpenStreetMap atlas of 5,223 Maya archaeological site records",
+      "url": "https://3e3dev.github.io/maya/"
     },
     {
       "name": "tom-sutton",
