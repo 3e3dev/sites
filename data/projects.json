@@ -1,6 +1,11 @@
 {
-  "checkedAt": "2026-09-06T12:55:06.845Z",
+  "checkedAt": "2026-09-07T15:06:07.166Z",
   "projects": [
+    {
+      "name": "bookshelf",
+      "description": "An interactive personal bookshelf with Goodreads review links",
+      "url": "https://3e3dev.github.io/bookshelf/"
+    },
     {
       "name": "fern-atlas",
       "description": "Fern & Frond — an interactive watercolor atlas of the ferns of the Americas",
